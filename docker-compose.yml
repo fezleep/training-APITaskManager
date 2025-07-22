@@ -1,0 +1,39 @@
+# taskmanager/docker-compose.yml
+
+version: '3.8'
+
+services:
+  # Serviço da aplicação FastAPI
+  web:
+    build: .
+    # Mapeia a porta 8000 do contêiner para a porta 8000 da sua máquina local
+    ports:
+      - "8000:8000"
+    # Monta o volume para que as mudanças no código local sejam refletidas no contêiner
+    volumes:
+      - ./app:/app/app
+    # Depende do serviço de banco de dados para garantir que ele esteja pronto primeiro
+    depends_on:
+      - db
+    # Variáveis de ambiente (exemplo, serão usadas em dias futuros para conexão com DB)
+    environment:
+      DATABASE_URL: postgresql://user:password@db:5432/taskmanager_db
+
+  # Serviço do banco de dados PostgreSQL
+  db:
+    image: postgres:13-alpine
+    # Variáveis de ambiente para configurar o PostgreSQL
+    environment:
+      POSTGRES_DB: taskmanager_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    # Mapeia a porta 5432 do contêiner para a porta 5432 da sua máquina local
+    ports:
+      - "5432:5432"
+    # Define um volume persistente para os dados do banco de dados
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+# Define os volumes persistentes
+volumes:
+  pg_data:
