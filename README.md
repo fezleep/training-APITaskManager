@@ -7,7 +7,7 @@ Dia 1 – Tarefa: Estrutura Inicial do Projeto
 Objetivo da Tarefa
 Configurar uma base sólida e escalável para o projeto, utilizando FastAPI e Docker de forma profissional.
 
-
+===========================================================================
 
 Especificações da Tarefa
 O projeto foi iniciado com as seguintes tecnologias e organização de diretórios:
@@ -20,8 +20,7 @@ Httpx: Biblioteca cliente HTTP para testes futuros.
 Dockerfile: Configuração para construção da imagem Docker da aplicação.
 docker-compose.yml: Orquestração da aplicação FastAPI e PostgreSQL em contêineres.
 
-
-
+===========================================================================
 
 Entregáveis da Tarefa:
 API configurada com Uvicorn e FastAPI em contêiner Docker.
@@ -34,9 +33,7 @@ Resposta esperada:
 
 {"message": "API de tarefas ativa"}
 
-
-======================================================================================================================
-
+===========================================================================
 
 Aprendizados e Resolução de Problemas
 A configuração inicial trouxe desafios comuns de Docker e Git, que se tornaram importantes oportunidades de aprendizado:
@@ -53,8 +50,7 @@ Causa: O branch local era master, enquanto o comando tentava enviar para main (n
 Aprendizado: A necessidade de verificar o nome do branch local (git branch). A solução foi usar git push -u origin master.
 A superação desses desafios reforçou a importância da análise de erros e da compreensão dos fundamentos das ferramentas, contribuindo para o avanço no aprendizado.
 
-======================================================================================================================
-
+===========================================================================
 
 Próximas Etapas
 Após a conclusão e verificação desta tarefa, o projeto avançará para o Dia 2: CRUD de tarefas com banco de dados.
